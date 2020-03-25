@@ -1,0 +1,30 @@
+{
+  "name": "infoxicator-one-app-statics",
+  "version": "5.0.1",
+  "description": "One app statics jsdeliver CDN",
+  "repository": "americanexpress/one-app",
+  "license": "Apache-2.0",
+  "author": "Ruben Casas",
+  "main": "5.0.0/app.js",
+  "contributors": [
+    "Andres Escobar <Andres.Escobar@aexp.com> (https://github.com/anescobar1991)",
+    "James Singleton <James.Singleton1@aexp.com> (https://github.com/JamesSingleton)",
+    "Jimmy King  <Jimmy.King@aexp.com> (https://github.com/10xLaCroixDrinker)",
+    "Jonathan Adshead <Jonathan.Adshead@aexp.com> (https://github.com/JAdshead)",
+    "Michael Tobia <Michael.M.Tobia@aexp.com> (https://github.com/Francois-Esquire)",
+    "Michael Tomcal <Michael.A.Tomcal@aexp.com> (https://github.com/mtomcal)",
+    "Stephanie Coates  <Stephanie.Coates1@aexp.com> (https://github.com/stephaniecoates)",
+    "Nelly Kiboi <Nelly.J.Kiboi@aexp.com> (https://github.com/nellyk)",
+    "Nickolas Oliver <nickolas.oliver@aexp.com> (https://github.com/PixnBits)"
+  ],
+  "keywords": [
+    "spa",
+    "single page app",
+    "American Express",
+    "web",
+    "react",
+    "holocron",
+    "ui",
+    "one-app"
+  ]
+}

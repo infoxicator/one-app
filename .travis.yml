@@ -10,9 +10,17 @@ before_install:
   # https://github.com/conventional-changelog/commitlint/issues/6
   - git remote set-branches --add origin master && git fetch
 install: NODE_ENV=development npm ci
+before_deploy:
+  - docker build -t infoxicator/one-app-test .
+  - docker cp $(docker create infoxicator/one-app-test):opt/one-app/build ./one-app-statics
+  - cd one-app-statics
 deploy:
-  provider: npm
-  on:
-    branch: feature/npm-publish-test
-  email: $NPM_EMAIL_ADDRESS
-  api_key: $NPM_AUTH_TOKEN
+  - provider: npm
+    on:
+      branch: feature/npm-publish-test
+    email: $NPM_EMAIL_ADDRESS
+    api_key: $NPM_AUTH_TOKEN
+  - provider: script
+    script: ./scripts/docker-push-prod.sh
+    on:
+      branch: feature/npm-publish-test
