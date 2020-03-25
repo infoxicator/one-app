@@ -10,10 +10,9 @@ before_install:
   # https://github.com/conventional-changelog/commitlint/issues/6
   - git remote set-branches --add origin master && git fetch
 install: NODE_ENV=development npm ci
-jobs:
-  include:
-    - stage: "Tests"
-      name: "Unit Tests"
-      script: npm run test:lint && npm run test:unit && npm run test:danger && npm run test:git-history
-    - name: "Integration Tests"
-      script: ./scripts/run-integration-tests.travis.sh
+deploy:
+  provider: npm
+  on:
+    branch: feature/npm-publish-test
+  email: $NPM_EMAIL_ADDRESS
+  api_key: $NPM_AUTH_TOKEN
