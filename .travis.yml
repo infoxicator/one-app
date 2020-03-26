@@ -13,8 +13,9 @@ install: NODE_ENV=development npm ci
 jobs:
   include:
     - stage: build docker prod image
-      - docker build -t infoxicator/one-app-test .
-      - docker cp $(docker create infoxicator/one-app-test):opt/one-app/build ./one-app-statics
+      script:
+        - docker build -t infoxicator/one-app-test .
+        - docker cp $(docker create infoxicator/one-app-test):opt/one-app/build ./one-app-statics
     - stage: Deploy Statics
       before_deploy:
         - cd one-app-statics
