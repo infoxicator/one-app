@@ -20,3 +20,12 @@ jobs:
         - ./scripts/docker-push-prod.sh
       on:
         branch: feature/npm-publish-test
+    - stage: Deploy Statics
+      before_deploy:
+      - cd one-app-statics
+      deploy:
+        provider: npm
+        email: $NPM_EMAIL_ADDRESS
+        api_key: $NPM_AUTH_TOKEN
+        on:
+          branch: feature/npm-publish-test
