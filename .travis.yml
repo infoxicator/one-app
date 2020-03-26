@@ -15,8 +15,10 @@ jobs:
     - stage: build docker prod image
       script: docker build -t infoxicator/one-app-test .
     - stage: extract static assets from image
+      install: skip
       script: docker cp $(docker create infoxicator/one-app-test):opt/one-app/build ./one-app-statics
     - stage: Deploy Statics
+      install: skip
       before_deploy:
         - cd one-app-statics
       deploy:
@@ -26,6 +28,9 @@ jobs:
       on:
         branch: feature/npm-publish-test
     - stage: Push image
+      install: skip
+      before_script:
+        - cd ..
       script: ./scripts/docker-push-prod.sh
       on:
         branch: feature/npm-publish-test
