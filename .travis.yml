@@ -13,6 +13,10 @@ before_install:
 install: NODE_ENV=development npm ci
 jobs:
   include:
+    - stage: build docker prod image
+      script:
+        - docker build -t infoxicator/one-app-test .
+        - docker cp $(docker create infoxicator/one-app-test):opt/one-app/build ./one-app-statics
     - stage: Push image
       script: ./scripts/docker-push-prod.sh
       on:
