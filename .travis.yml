@@ -26,8 +26,6 @@ jobs:
         on:
           branch: feature/npm-publish-test
     - stage: Push image
-      before_script:
-        - cd ..
       script: ./scripts/docker-push-prod.sh
       on:
         branch: feature/npm-publish-test
