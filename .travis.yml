@@ -8,6 +8,7 @@ services:
 before_install:
   # Create a master branch for commitlint
   # https://github.com/conventional-changelog/commitlint/issues/6
+  - chmod +x ./scripts/docker-push-prod.sh
   - git remote set-branches --add origin master && git fetch
 install: NODE_ENV=development npm ci
 jobs:
