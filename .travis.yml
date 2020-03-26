@@ -10,11 +10,12 @@ before_install:
   # https://github.com/conventional-changelog/commitlint/issues/6
   - git remote set-branches --add origin master && git fetch
 install: NODE_ENV=development npm ci
-before_script:
-  - docker build -t infoxicator/one-app-test .
-  - docker cp $(docker create infoxicator/one-app-test):opt/one-app/build ./one-app-statics
 jobs:
   include:
+    - stage: build docker prod image
+      script: docker build -t infoxicator/one-app-test .
+    - stage: extract static assets from image
+      script: docker cp $(docker create infoxicator/one-app-test):opt/one-app/build ./one-app-statics
     - stage: Deploy Statics
       before_deploy:
         - cd one-app-statics
