@@ -12,19 +12,6 @@ before_install:
 install: NODE_ENV=development npm ci
 jobs:
   include:
-    - stage: build docker prod image
-      script:
-        - docker build -t infoxicator/one-app-test .
-        - docker cp $(docker create infoxicator/one-app-test):opt/one-app/build ./one-app-statics
-    - stage: Deploy Statics
-      before_deploy:
-        - cd one-app-statics
-      deploy:
-        provider: npm
-        email: $NPM_EMAIL_ADDRESS
-        api_key: $NPM_AUTH_TOKEN
-        on:
-          branch: feature/npm-publish-test
     - stage: Push image
       script: ./scripts/docker-push-prod.sh
       on:
