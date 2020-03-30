@@ -29,6 +29,7 @@ export default contentSecurityPolicyBuilder({
       'https://sample-cdn.frank',
       // used for our sample app deployment in heroku
       'https://one-app-statics.surge.sh',
+      'https://one-app-statics-test.surge.sh',
       // used for local development
       `${ip.address()}:3001`,
       // used for local development
@@ -40,6 +41,7 @@ export default contentSecurityPolicyBuilder({
       'https://sample-cdn.frank',
       // used for our sample app deployment in heroku
       'https://one-app-statics.surge.sh',
+      'https://one-app-statics-test.surge.sh',
     ],
     styleSrc: [
       "'self'",
@@ -56,6 +58,7 @@ export default contentSecurityPolicyBuilder({
       'https://sample-cdn.frank',
       // used for our sample app deployment in heroku
       'https://one-app-statics.surge.sh',
+      'https://one-app-statics-test.surge.sh',
     ],
   },
 });

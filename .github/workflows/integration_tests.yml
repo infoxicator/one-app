@@ -1,0 +1,31 @@
+name: One App Tests
+on:
+  push:
+    branches:
+      - feat/deploy-actions
+jobs:
+  one-app-tests:
+    name: Run One App Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: npm install
+        run: NODE_ENV=development npm ci
+      - name: Integration tests
+        shell: bash
+        env:
+          - HEROKU_DOCKER_USERNAME: ${{ secrets.HEROKU_DOCKER_USERNAME }}
+          - HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          - SURGE_DOMAIN: ${{ secrets.SURGE_DOMAIN }}
+          - SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+        run: |
+          bash ./scripts/run-integration-tests.github.sh -x
