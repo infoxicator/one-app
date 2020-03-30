@@ -23,6 +23,7 @@ jobs:
       - name: Integration tests
         shell: bash
         env:
+          NODE_ENV: production
           HEROKU_DOCKER_USERNAME: ${{ secrets.HEROKU_DOCKER_USERNAME }}
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           HEROKU_APP_URL: ${{ secrets.HEROKU_APP_URL }}
