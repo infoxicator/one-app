@@ -28,4 +28,4 @@ jobs:
           SURGE_DOMAIN: ${{ secrets.SURGE_DOMAIN }}
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
         run: |
-          /scripts/run-integration-tests.github.sh -x
+          ./scripts/run-integration-tests.github.sh -x
