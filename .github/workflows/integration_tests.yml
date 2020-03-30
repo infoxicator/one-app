@@ -23,9 +23,9 @@ jobs:
       - name: Integration tests
         shell: bash
         env:
-          - HEROKU_DOCKER_USERNAME: ${{ secrets.HEROKU_DOCKER_USERNAME }}
-          - HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-          - SURGE_DOMAIN: ${{ secrets.SURGE_DOMAIN }}
-          - SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+          HEROKU_DOCKER_USERNAME: ${{ secrets.HEROKU_DOCKER_USERNAME }}
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          SURGE_DOMAIN: ${{ secrets.SURGE_DOMAIN }}
+          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
         run: |
           bash ./scripts/run-integration-tests.github.sh -x
