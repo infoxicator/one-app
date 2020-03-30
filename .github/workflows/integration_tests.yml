@@ -22,10 +22,10 @@ jobs:
         run: NODE_ENV=development npm ci
       - name: Integration tests
         shell: bash
-        env: |
+        env:
           HEROKU_DOCKER_USERNAME: ${{ secrets.HEROKU_DOCKER_USERNAME }}
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           SURGE_DOMAIN: ${{ secrets.SURGE_DOMAIN }}
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
         run: |
-          ./scripts/run-integration-tests.github.sh -x "$HEROKU_DOCKER_USERNAME"
+          echo "$HEROKU_DOCKER_USERNAME"
