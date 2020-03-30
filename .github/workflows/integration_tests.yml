@@ -25,6 +25,8 @@ jobs:
         env:
           HEROKU_DOCKER_USERNAME: ${{ secrets.HEROKU_DOCKER_USERNAME }}
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          HEROKU_APP_URL: ${{ secrets.HEROKU_APP_URL }}
+          HEROKU_APP_ID: ${{ secrets.HEROKU_APP_ID }}
           SURGE_DOMAIN: ${{ secrets.SURGE_DOMAIN }}
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
         run: |
