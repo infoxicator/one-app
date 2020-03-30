@@ -28,4 +28,4 @@ jobs:
           SURGE_DOMAIN: ${{ secrets.SURGE_DOMAIN }}
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
         run: |
-          bash ./scripts/run-integration-tests.github.sh -x
+          ./scripts/run-integration-tests.github.sh -x "$HEROKU_DOCKER_USERNAME"
