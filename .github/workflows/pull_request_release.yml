@@ -2,7 +2,7 @@ name: one-app-release
 on:
   push:
     branches:
-      - master
+      - release-test
 jobs:
   one-app-release-pull-request:
     runs-on: ubuntu-latest
