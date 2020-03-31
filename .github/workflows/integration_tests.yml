@@ -31,5 +31,4 @@ jobs:
           SURGE_DOMAIN: ${{ secrets.SURGE_DOMAIN }}
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
         run: |
-          chown :1000 .
           ./scripts/run-integration-tests.github.sh -x
