@@ -9,7 +9,7 @@ Releases can be triggered in two ways:
 
 ## Automated release process
 
- 1. An automated pull request will be raised every Wednesday. This uses this [pull_request_release workflow](.github/workflows/pull_request_release.yml)and updates package.json, package-lock.json and the changelog(Behind the scene it uses [standard-version](https://github.com/conventional-changelog/standard-version) to generate and update this files) with the changes to be released. The commit message contains the version to be released. Updated this pull request to remove or add any new changes.
+ 1. An automated pull request will be raised every Wednesday, this would be from the `release-automated`branch to master. This uses this [pull_request_release workflow](.github/workflows/pull_request_release.yml)and updates package.json, package-lock.json and the changelog(Behind the scene it uses [standard-version](https://github.com/conventional-changelog/standard-version) to generate and update this files) with the changes to be released. The commit message contains the version to be released. Updated this pull request to remove or add any new changes.
  2. Once a pull request is reviewed merge the pull request and please ensure that the commit message is updated to follow this pattern  
 
    ``` bash
