@@ -4,8 +4,8 @@ This defines the One App release process.
 
 Releases can be triggered in two ways:
 
+  - [Automated release process](#automated-release-process)
   - [Manual release process](#manual-release-process)
-  - [How can i revert a release](#how-can-i-revert-a-release)
 
 ## Automated release process
 
