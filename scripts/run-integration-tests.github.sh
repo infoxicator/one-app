@@ -9,4 +9,4 @@ set -ev
 #docker tag one-app:at-test registry.heroku.com/$HEROKU_APP_ID/web && \
 #docker push registry.heroku.com/$HEROKU_APP_ID/web && \
 #npx heroku container:release web -a $HEROKU_APP_ID && \
-ONE_DANGEROUSLY_SKIP_ONE_APP_IMAGE_BUILD=true npm run test:integration-live -- --remote-one-app-environment=$HEROKU_APP_URL
+ONE_DANGEROUSLY_SKIP_ONE_APP_IMAGE_BUILD=true npm run test:integration -- --remote-one-app-environment=$HEROKU_APP_URL
