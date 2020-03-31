@@ -1,6 +1,6 @@
 #!/bin/bash
 set -ev
-#docker build -t one-app:at-test .
+docker build -t one-app:at-test .
 #npm run build:sample-modules -- --archive-built-artifacts --bundle-statics-origin=$SURGE_DOMAIN
 #echo $HEROKU_APP_URL >> sample-module-bundles/CORS && \
 #npx surge teardown $SURGE_DOMAIN --token $SURGE_TOKEN && \
