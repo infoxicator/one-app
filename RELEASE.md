@@ -48,3 +48,7 @@ For the first release please use the [manual release process](#manual-release-pr
 ### What happens if a pull request merged after the automated pull request is created?
 
 We should prevent this from happening, but if it does happen, the pull request will update and run again with changes that have been merged to master.
+
+### How can i do a dry run to test out the files to be changed locally
+
+Locally you can run  `run release -- --dry-run`, this would show the new version to be released, the files that would changed and a view of the changelog without changing any of the files.
