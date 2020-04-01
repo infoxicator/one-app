@@ -22,7 +22,7 @@ Releases can be triggered in two ways:
 
 4. After the the generated tag is pushed to the branch this will trigger the docker build and push of the images and statics to the docker hub. The development and production images would be accessible in docker [https://hub.docker.com/u/oneamex](https://hub.docker.com/u/oneamex)
 
-5. For the github release notes we are currently using [https://github.com/release-drafter/release-drafter](https://github.com/release-drafter/release-drafter) to generate release notes. Please use the labels specified within [release-drafter](.github/release-drafter.yml) to categorize the different pull requests by adding the labels to them. Update the draft release notes and tie it to the released tag above you can also link this to different artifacts.
+5. For the github release notes we are currently using [https://github.com/release-drafter/release-drafter](https://github.com/release-drafter/release-drafter) to generate release notes. Please use the labels specified within [release-drafter](.github/release-drafter.yml) to categorize the different pull requests by adding the labels to them. Update the draft release notes and tie it to the released tag above you can also link this to different artifacts. 
 
 ## Manual release process
 
@@ -31,14 +31,20 @@ This process can be used to make ad hoc releases outside of wednesday release cy
  1. Run `npm run release` locally within your branch, this would update the changelog, [package.json](package.json), [package-lock.json](package-lock.json)and [one-app-statics package.json](one-app-statics/package.json) with the new version to be released. Push your changes and create a pull request to master.
  2. When the changes are merged and reviewed. The same process from step 3 above will be followed.
 
-## How can i revert a release
+## FAQs
+
+### How can i revert a release?
 
 If changes were made and need to be reverted. Please use the [manual release process](#manual-release-process) to revert the changes.
 
-## How can i run the first release
+### How can i run the first release?
 
 For the first release please use the [manual release process](#manual-release-process). Run `npm run release -- --first-release` to generate the initial changelog and update the package.json files.
 
-## How can i create a prerelease
+### How can i create a prerelease?
 
 For the first release please use the [manual release process](#manual-release-process). Run `npm run release -- --prerelease` to generate the initial changelog and update the package.json files.
+
+### What happens if a pull request merged after the automated pull request is created?
+
+We should prevent this from happening, but if it does happen, the pull request will update and run again with changes that have been merged to master.
