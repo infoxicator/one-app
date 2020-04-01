@@ -9,7 +9,7 @@ Releases can be triggered in two ways:
 
 ## Automated release process
 
- 1. An automated pull request will be raised every Wednesday, this would be from the `release-automated` branch to master. This uses this [pull_request_release workflow](.github/workflows/pull_request_release.yml)and updates package.json, package-lock.json and the changelog(Behind the scene it uses [standard-version](https://github.com/conventional-changelog/standard-version) to generate and update this files) with the changes to be released. The commit message contains the version to be released. Updated this pull request to remove or add any new changes.
+ 1. An automated pull request will be raised every Wednesday at 16:00 UTC, this would be from the `release-automated` branch to master. This uses this [pull_request_release workflow](.github/workflows/pull_request_release.yml)and updates [package.json](package.json), [package-lock.json](package-lock.json), [one-app-statics package.json](one-app-statics/package.json) and the changelog(Behind the scene it uses [standard-version](https://github.com/conventional-changelog/standard-version) to generate and update this files) with the changes to be released. The commit message contains the version to be released. Updated this pull request to remove or add any new changes.
  2. Once a pull request is reviewed merge the pull request and please ensure that the commit message is updated to follow this pattern  
 
    ``` bash
@@ -28,9 +28,17 @@ Releases can be triggered in two ways:
 
 This process can be used to make ad hoc releases outside of wednesday release cycle.
 
- 1. Run `npm run release` locally within your branch, this would update the changelog,package.json and package-lock.json with the new version to be released. Push your changes and create a pull request to master.
- 2. When the changes are merged and reviewed. Generate a tag and push that tag to master. This will kick of the One App release to docker and the same process from step 5 above will be followed.
+ 1. Run `npm run release` locally within your branch, this would update the changelog, [package.json](package.json), [package-lock.json](package-lock.json)and [one-app-statics package.json](one-app-statics/package.json) with the new version to be released. Push your changes and create a pull request to master.
+ 2. When the changes are merged and reviewed. The same process from step 3 above will be followed.
 
 ## How can i revert a release
 
 If changes were made and need to be reverted. Please use the [manual release process](#manual-release-process) to revert the changes.
+
+## How can i run the first release
+
+For the first release please use the [manual release process](#manual-release-process). Run `npm run release -- --first-release` to generate the initial changelog and update the package.json files.
+
+## How can i create a prerelease
+
+For the first release please use the [manual release process](#manual-release-process). Run `npm run release -- --prerelease` to generate the initial changelog and update the package.json files.

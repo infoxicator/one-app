@@ -24,8 +24,8 @@ jobs:
       - name: set tag version
         id: set_tag_version
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "one.amex@aexp.com"
+          git config --local user.name "OneAmexBot"
           echo ${tagversion}
           git tag ${tagversion}
           git push origin --tag
