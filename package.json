@@ -165,13 +165,18 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
-  "standard-version": {
-    "skip": {
-      "tag": true
-    }
-  },
   "optionalDependencies": {
     "gc-stats": "^1.4.0",
     "heapdump": "^0.3.15"
+  },
+  "standard-version": {
+    "bumpFiles": [
+      "package.json",
+      "package-lock.json",
+      "one-app-statics/package.json"
+    ],
+    "skip": {
+      "tag": true
+    }
   }
 }
