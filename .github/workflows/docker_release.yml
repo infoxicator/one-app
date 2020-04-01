@@ -24,7 +24,7 @@ jobs:
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login --username ${{ secrets.DOCKER_USER }} --password-stdin
       - name: Build production docker image
         run: docker build -t prod .
-      - name: Docker build prod statics
+      - name: Docker push prod statics
         run: docker cp $(docker create prod):opt/one-app/build ./one-app-statics
       - name: Build development docker image
         run: docker build -t dev . --target=development
