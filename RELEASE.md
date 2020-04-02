@@ -49,7 +49,7 @@ For the first release please use the [manual release process](#manual-release-pr
 
 ### What happens if a pull request merged after the automated pull request is created?
 
-We should try to prevent this from happening, but if it does happen, since the pull request runs every wednesday it won't be triggered again and updated. Follow the above [manual release process](#manual-release-process) to include the changes released.
+We should try to prevent this from happening, but if it does happen, since the pull request runs every wednesday it won't be triggered again and updated. Follow the above [manual release process](#manual-release-process) to include the changes that have been merged.
 
 ### How can i do a dry run to test out the files to be changed locally
 
