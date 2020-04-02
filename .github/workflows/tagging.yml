@@ -4,12 +4,12 @@ on:
     types:
       - closed
     branches:
-      - master
+      - feat/end-to-end-release
 jobs:
   tagging-release:
     name: Tagging release
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged && github.head_ref == 'release-automated' && github.base_ref == 'master'
+    if: github.event.pull_request.merged && github.head_ref == 'release-automated' && github.base_ref == 'feat/end-to-end-release'
     steps:
       - uses: actions/checkout@v2
       - name: get commit message
