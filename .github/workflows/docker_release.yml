@@ -35,7 +35,7 @@ jobs:
           docker cp $(docker create prod):opt/one-app/one-app-statics/package.json ./one-app-statics
       - name: Build project # This would actually build your project, using zip for an example artifact
         run: |
-          zip --junk-paths one-app-assets one-app-statics/build
+          zip -r one-app-assets one-app-statics/build
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
