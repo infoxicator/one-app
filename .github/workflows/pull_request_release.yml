@@ -1,7 +1,8 @@
 name: one-app-release
 on:
-  schedule:
-  - cron: "0 16 * * 3"
+  push:
+    branches:
+      - feat/end-to-end-release
 jobs:
   one-app-release-pull-request:
     runs-on: ubuntu-latest
@@ -34,4 +35,4 @@ jobs:
           body: 'This is an auto-generated pull request for One App release changes. Please review this PR and merge it for a release to be initiated. Please close this PR to stop a release from being initiated.'
           labels: release,automated pr,skip-release-drafter
           branch: prerelease
-          base: master
+          base: feat/end-to-end-release
