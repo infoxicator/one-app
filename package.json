@@ -1,6 +1,6 @@
 {
   "name": "@americanexpress/one-app",
-  "version": "5.0.0-rc1",
+  "version": "5.0.18-rc1",
   "description": "One Amex SPA technology stack.",
   "main": "index.js",
   "engines": {
@@ -16,9 +16,10 @@
     "build:bundle": "cross-env NODE_OPTIONS=--max-old-space-size=4096 bundle-one-app",
     "build:server": "babel src --out-dir lib --ignore \"**/__mocks__\"",
     "build:artifacts:statics": "node scripts/build-static-assets-artifact.js",
-    "build": "concurrently \"npm run build:bundle\" \"npm run build:server\" -n build:bundle,build:server --kill-others-on-fail",
+    "build": "concurrently \"npm run build:bundle\" \"npm run build:server\" \"npm run build:static-package-json\" -n build:bundle,build:server --kill-others-on-fail",
     "build:prod-sample": "concurrently \"npm run build:sample-modules\" \"node scripts/build-one-app-docker-setup.js\" -n build-modules,build-app",
     "build:sample-modules": "node scripts/build-sample-modules.js",
+    "build:static-package-json": "node scripts/generate-statics-package-json.js",
     "start:watch": "nodemon --signal SIGTERM --watch src --ext js,jsx --exec babel-node src/server/index.js",
     "prestart:prod-sample": "npm run build:prod-sample",
     "start:prod-sample": "docker-compose -f ./prod-sample/docker-compose.yml up --abort-on-container-exit",
@@ -44,7 +45,7 @@
   },
   "homepage": "https://github.com/americanexpress/one-app",
   "bugs": {
-    "url": "https://github.com/americanexpress/one-app"
+    "url": "https://github.com/americanexpress/one-app/issues"
   },
   "contributors": [
     "Andres Escobar <Andres.Escobar@aexp.com> (https://github.com/anescobar1991)",
@@ -55,7 +56,8 @@
     "Michael Tomcal <Michael.A.Tomcal@aexp.com> (https://github.com/mtomcal)",
     "Stephanie Coates  <Stephanie.Coates1@aexp.com> (https://github.com/stephaniecoates)",
     "Nelly Kiboi <Nelly.J.Kiboi@aexp.com> (https://github.com/nellyk)",
-    "Nickolas Oliver <nickolas.oliver@aexp.com> (https://github.com/PixnBits)"
+    "Nickolas Oliver <nickolas.oliver@aexp.com> (https://github.com/PixnBits)",
+    "Ruben Casas <ruben.casas@aexp.com> (https://github.com/infoxicator)"
   ],
   "license": "Apache-2.0",
   "keywords": [
