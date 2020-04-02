@@ -1,5 +1,5 @@
 {
-  "name": "@americanexpress/one-app-statics",
+  "name": "infoxicator-one-app-statics",
   "version": "5.0.0-rc1",
   "description": "One App Static Assets",
   "main": "index.js",
